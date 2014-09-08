@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head><title>Calcul diferenta fus orar in JSF</title> 
+</h:head>
+<h:body>
+	<h:form>
+		PRIMUL PUNCT<br></br>
+		<h:inputText id="long1" value="#{FusOrarBean.long1}"/>
+		<h:selectOneRadio value="#{FusOrarBean.tiplong1}">
+		   	<f:selectItem itemValue="EST" itemLabel="EST" />
+		   	<f:selectItem itemValue="VEST" itemLabel="VEST" />
+		</h:selectOneRadio><br></br>
+		
+		ORA IN PRIMUL PUNCT:<br></br>
+		<h:inputText id = "ora" value="#{FusOrarBean.ora}"/>
+		<h:inputText id = "minutul" value="#{FusOrarBean.minutul}"/>
+		<br></br>
+		<br></br>	
+		
+		AL DOILEA PUNCT<br></br>
+		<h:inputText id="long2" value="#{FusOrarBean.long2}"/>
+		<h:selectOneRadio value="#{FusOrarBean.tiplong2}">
+		   	<f:selectItem itemValue="EST" itemLabel="EST" />
+		   	<f:selectItem itemValue="VEST" itemLabel="VEST" />
+		</h:selectOneRadio>
+		<br></br>
+		
+		<h:commandButton value="calculeaza" update="displayFus"  /><br></br>
+		
+		<br></br>REZULTAT<br></br>
+		<h:outputText value="#{FusOrarBean.diferentaFus}" id = "displayFus"  /><br></br>
+		<h:outputText value="#{FusOrarBean.oraPct2}" id = "displayOra"  />
+	</h:form>
+	
+
+
+
+</h:body>
+</html>
